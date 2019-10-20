@@ -1,2 +1,2 @@
 # DailyCodingProblem
-Daily coding problem
+Daily solve a common asked problem
