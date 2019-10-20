@@ -1,0 +1,25 @@
+//Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+bool sumOfTwo(int a[], int n, int k) {
+    int l=0, r=n-1;
+    while(l < r) {
+        if(a[l] + a[r] == k) return true;
+        if(a[l] + a[r] < k) l++;
+        else r--;
+    }
+    return false;
+}
+
+int main(){
+    int a[] = {10, 15, 3, 7};
+    int k = 17;
+    sort(a, a+4);
+   
+    string s = sumOfTwo(a, 4, k) == true ? "Sum Exists" : "Sum not Exists";
+    cout << s;
+    return 0;
+} 
