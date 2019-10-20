@@ -1,0 +1,23 @@
+//Given n numbers, find the greatest common denominator between them.
+
+#include <iostream>
+using namespace std;
+
+int gcd(int a, int b) {
+    if(a == 0)
+        return b;
+    return gcd(b % a, a);
+}
+
+int findGCD(int a[], int n) {
+    int result = a[0];
+    for(int i=1; i<n; i++) {
+        result = gcd(result, a[i]);
+    }
+    return result;
+}
+int main() {
+    int a[] = {42, 56, 14};
+    cout << findGCD(a, 3);
+    return 0;
+}
